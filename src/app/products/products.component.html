@@ -1,0 +1,38 @@
+<div class="container">
+  <p class="text-center"> Form Status: {{ productForm.status }} </p>
+  <form class="col-lg-6 mx-auto" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="productName">Product Name</label>
+      <input type="text" class="form-control" formControlName="productName" required>
+    </div>
+    <div class="mb-3">
+      <label>Type</label>
+      <input type="text" class="form-control" formControlName="type" required> 
+    </div>
+    <div class="mb-3">
+      <label>Price</label>
+      <input type="number" class="form-control" formControlName="price" required>
+    </div>
+    <div class="mb-3" formArrayName="deliveryAddress">
+      <h2>Address</h2>
+      <button (click)="addAddress()" class="mb-2">Add Address</button>
+
+      <div *ngFor="let addr of deliveryAddress.controls; let addressIndex=index" [formGroupName]="addressIndex">
+        <div class="border border-dark p-1">
+          <h6>Address {{addressIndex + 1}}</h6>
+          <label>City</label>
+          <input type="text" class="form-control" formControlName="city" required>
+
+          <label>State</label>
+          <input type="text" class="form-control" formControlName="state" required>
+
+          <p *ngIf="deliveryAddress.length > 1">
+            <button class="mt-2" (click)="deleteAddress(addressIndex)">Delete</button>
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid">Submit</button>
+  </form>
+</div>
