@@ -1,0 +1,9 @@
+{
+  "employees": [
+    { "id": 1, "name": "Mitul Patel", "designation": "Angular Developer" },
+    { "id": 2, "name": "Hiren Tandel", "designation": "Angular Developer" },
+    { "id": 3, "name": "Gaurang Valia", "designation": "Angular Developer" },
+    { "id": 4, "name": "Anjali Tandel", "designation": "Angular Developer" },
+    { "id": 5, "name": "Sonal Patil", "designation": "Angular Developer" }
+  ]
+}
