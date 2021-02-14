@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let employee of employees'>
+      <tr *ngFor='let employee of employees$ | async'>
         <th scope="row">{{employee.id}}</th>
         <td>{{employee.name}}</td>
         <td>{{employee.designation}}</td>
@@ -22,7 +22,6 @@
     </tbody>
   </table>
   <a routerLink="add">Add Employee</a>
-  <button (click)="unsubscribeEmployees()">Unsubscibe</button>
 </div>
 
 <router-outlet></router-outlet>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient} from '@angular/common/http';
-import { Employee } from '../shared/employee';
+import { Employee } from '../shared/employee.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,11 @@ export class EmployeeService {
   private headers = new Headers({ 'Content-Type': 'application/json'});
 
   constructor(private http: HttpClient) { }
+
+  //######## Get Data from JSON Server using Async Pipe ##########
+  public getEmployees() {
+    return this.http.get<Employee[]>('http://localhost:3000/employees')
+  }
 
   //######## Get Data from JSON Server using Promise ##########
   // public getEmployeesUsingPromise(): Promise<any> {
@@ -28,19 +33,19 @@ export class EmployeeService {
 
 
   //######## Get Data from JSON Server using Observables ##########
-  public getEmployeesusingObservables(): Observable<Employee[]>  {
-    return this.http.get<Employee[]>('http://localhost:3000/employees')
-  }
+  // public getEmployeesusingObservables(): Observable<Employee[]>  {
+  //   return this.http.get<Employee[]>('http://localhost:3000/employees')
+  // }
 
 
 
   //######## Get Data from RegRes using Observables ##########
-  public getDemo(): Observable<any>  {
-    return this.http.get('https://reqres.in/api/users?page=2')
-  }
+  // public getDemo(): Observable<any>  {
+  //   return this.http.get('https://reqres.in/api/users?page=2')
+  // }
 
-  public getDemoError(): Observable<any>  {
-    return this.http.get('https://reqres.in/api/users/23')
-  }
+  // public getDemoError(): Observable<any>  {
+  //   return this.http.get('https://reqres.in/api/users/23')
+  // }
 
 }

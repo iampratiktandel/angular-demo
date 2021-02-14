@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from 'src/app/shared/employee';
+import { Employee } from 'src/app/shared/employee.model';
 
 @Component({
   selector: 'app-add-employee',
