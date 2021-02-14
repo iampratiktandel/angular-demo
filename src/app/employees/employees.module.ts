@@ -13,6 +13,6 @@ import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
     CommonModule,
     EmployeesRoutingModule
   ],
-  exports: [EmployeesComponent, AddEmployeeComponent, EditEmployeeComponent]
+  // exports: [EmployeesComponent, AddEmployeeComponent, EditEmployeeComponent]
 })
 export class EmployeesModule { }

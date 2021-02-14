@@ -1,0 +1,93 @@
+<div class="container">
+  <p class="text-center"> Form Status: {{ internForm.status }} </p>
+
+  <div class="text-center">
+    <button type="button" (click)="disableControl()">Disable Control</button>
+    <button type="button" (click)="disableGroup()">Disable Group</button>
+    <button type="button" (click)="disableArray()">Disable Array</button>
+    <br>
+    <button type="button" (click)="enableControl()">Enable Control</button>
+    <button type="button" (click)="enableGroup()">Enable Group</button>
+    <button type="button" (click)="enableArray()">Enable Array</button>
+    <!-- <br> -->
+  </div>
+  
+
+  <form class="col-lg-6 mx-auto" [formGroup]="internForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="internName">Intern Name</label> 
+      <input type="text" id="name" class="form-control" formControlName="name">
+      <!-- Display error -->
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="name.errors.minlength">
+          Name must be at least 4 characters long.
+        </div>
+      </div>
+      <!-- /Display error -->
+    </div>
+
+    <div class="mb-3">
+      <label>Email</label>
+      <input type="email" class="form-control" formControlName="email">
+      <!-- Display error -->
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+        <div *ngIf="email.errors.required">
+          Email is required.
+        </div>
+        <div *ngIf="email.errors.pattern">
+          Enter a valid email.
+        </div>
+      </div>
+      <!-- /Display error -->
+    </div>
+
+    <div class="mb-3" formGroupName="projects">
+      <label>Project 1</label>
+      <input type="text" class="form-control" formControlName="projectOne">
+
+      <label>Project 2</label>
+      <input type="text" class="form-control" formControlName="projectTwo">
+
+      <div *ngIf="projects.errors?.optionalValidate && (projects.touched || projects.dirty)" class="cross-validation-error-message alert alert-danger">
+        One Project is required.
+    </div>
+    </div>
+    
+    <div class="mb-3" formArrayName="skills">
+      <h2>Skills</h2>
+      <button type="button" class="mb-2" (click)="addSkill()">Add Skill</button>
+
+      <div *ngFor="let skill of internForm.value.skills; let skillIndex = index" [formGroupName]="skillIndex">
+        <div class="border border-dark p-1">
+          <label>Skill</label>
+          <input type="text" class="form-control" formControlName="skillName">
+
+          <label>Experience</label>
+          <input type="text" class="form-control" formControlName="experience">
+          
+          <p *ngIf="internForm.value.skills.length > 1">
+            <button type="button" class="mt-2" (click)="deleteSkill(skillIndex)">Delete</button>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="agree">
+      <label class="form-check-label" for="flexCheckDefault">
+        I agree
+      </label>
+      <!-- Display error -->
+      <div *ngIf="agree.invalid && (agree.dirty || agree.touched)" class="alert alert-danger">
+        <div *ngIf="agree.errors.required">
+          Agree to disagree
+        </div>
+      </div>
+      <!-- /Display error -->
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!internForm.valid">Submit</button>
+  </form>
+</div>

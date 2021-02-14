@@ -8,6 +8,12 @@ const routes: Routes = [
   { 
     path: '', component: EmployeesComponent,
     //###### This route is not working ######
+    // children: [
+    //   { path: 'add', component: AddEmployeeComponent }
+    // ]
+  },
+  {
+    path: 'employess', component: EmployeesComponent, 
     children: [
       { path: 'add', component: AddEmployeeComponent }
     ]
