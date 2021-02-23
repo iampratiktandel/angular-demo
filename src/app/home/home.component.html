@@ -8,3 +8,21 @@
   <li class="nav-item">
     <a class="nav-link" routerLink="/rxjs">Rxjs</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/portal">Portal</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/overlay">Overlay</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/di">DI</a>
+  </li>
+</ul>
+
+  <button (click)="loadComponentOne()">Load Dyno</button>
+
+  <button (click)="loadComponentTwo()">Load Dev</button>
+
+  <ng-container #dynoContainer></ng-container>
+
+  <ng-container #devContainer></ng-container>

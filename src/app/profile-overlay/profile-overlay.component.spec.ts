@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InternComponent } from './intern.component';
+import { ProfileOverlayComponent } from './profile-overlay.component';
 
-describe('InternComponent', () => {
-  let component: InternComponent;
-  let fixture: ComponentFixture<InternComponent>;
+describe('ProfileOverlayComponent', () => {
+  let component: ProfileOverlayComponent;
+  let fixture: ComponentFixture<ProfileOverlayComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InternComponent ]
+      declarations: [ ProfileOverlayComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InternComponent);
+    fixture = TestBed.createComponent(ProfileOverlayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

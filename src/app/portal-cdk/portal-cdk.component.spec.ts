@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListInternComponent } from './list-intern.component';
+import { PortalCdkComponent } from './portal-cdk.component';
 
-describe('ListInternComponent', () => {
-  let component: ListInternComponent;
-  let fixture: ComponentFixture<ListInternComponent>;
+describe('PortalCdkComponent', () => {
+  let component: PortalCdkComponent;
+  let fixture: ComponentFixture<PortalCdkComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListInternComponent ]
+      declarations: [ PortalCdkComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListInternComponent);
+    fixture = TestBed.createComponent(PortalCdkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

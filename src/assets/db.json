@@ -5,5 +5,24 @@
     { "id": 3, "name": "Gaurang Valia", "designation": "Angular Developer" },
     { "id": 4, "name": "Anjali Tandel", "designation": "Angular Developer" },
     { "id": 5, "name": "Sonal Patil", "designation": "Angular Developer" }
+  ],
+  "interns": [
+    { 
+      "id": 1,
+      "name": "Pratik",
+      "email": "pratiktandel@gmail.com",
+      "projects": [
+        {
+          "project1" : "website",
+          "project2" : "app"
+        }
+      ],
+      "skills": [
+        {
+          "skillName": "HTML",
+          "experience": "1 year"
+        } 
+      ]
+    }
   ]
 }
