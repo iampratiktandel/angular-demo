@@ -5,11 +5,19 @@ import { ProviderRoutingModule } from './provider-routing.module';
 import { ProviderComponent } from './provider.component';
 import { CompOneComponent } from './comp-one/comp-one.component';
 import { CompTwoComponent } from './comp-two/comp-two.component';
-import { LoggerService } from './logger-service/logger.service';
-import { DateLoggerService } from './date-logger/date-logger.service';
 import { CompThreeComponent } from './comp-three/comp-three.component';
-import { NAME } from './name';
+import { NameService } from './provider-service/name.service';
+import { DateService } from './provider-service/date.service';
+import { AgeService } from './provider-service/age.service';
 
+var configValue: number = 1;
+var getLogObject = () => {
+  if(configValue === 1) {
+    return new AgeService();
+  } else {
+    return new DateService();
+  }
+}
 
 @NgModule({
   declarations: [ProviderComponent, CompOneComponent, CompTwoComponent, CompThreeComponent],
@@ -18,9 +26,18 @@ import { NAME } from './name';
     ProviderRoutingModule
   ],
   providers: [
-    {provide: LoggerService, useClass: DateLoggerService},
-    {provide: DateLoggerService, useExisting: LoggerService},
-    {provide: NAME, useValue: 'Pratik'}
+    /* useClass */
+    { provide: NameService, useClass: NameService },
+    { provide: DateService, useClass: DateService },
+    { provide: AgeService, useClass: AgeService },
+    // { provide: AgeService, useClass: NameService }
+
+    /* useExisting */
+    // { provide: DateService, useExisting: NameService },
+    // { provide: AgeService, useExisting: NameService }
+
+    /* useFactory */
+    // { provide: DateService, useFactory: getLogObject }
   ]
 })
 export class ProviderModule { }

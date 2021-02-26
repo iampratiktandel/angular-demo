@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <div #name>
+        <h5>Name</h5>
+        <select>
+          <option *ngFor="let name of nameSource" value={{name}}>{{name}}</option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="col-lg-3">
+      <div #color>
+        <h5>Color</h5>
+        <select>
+          <option *ngFor="let color of colorSource" value={{color}}>{{color}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col col-lg-3">
+    <div class="container mt-5">
+      <h3>ZIP Container</h3>
+      <div id="zipContainer"></div>
+    </div>
+  </div>
+
+  <div class="col col-lg-3">
+    <div class="container mt-5">
+      <h3>forkJoin Container</h3>
+      <div id="forkContainer"></div>
+    </div>
+  </div>
+
+  <div class="col col-lg-3">
+    <div class="container mt-5">
+      <h3>combineLatest Container</h3>
+      <div id="combineContainer1"></div>
+    </div>
+  </div>
+
+  <div class="col col-lg-3">
+    <div class="container mt-5">
+      <h3>withLatestFrom Container</h3>
+      <div id="combineContainer2"></div>
+    </div>
+  </div>
+
+</div>

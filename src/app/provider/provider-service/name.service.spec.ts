@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DateLoggerService } from './date-logger.service';
+import { NameService } from './name.service';
 
-describe('DateLoggerService', () => {
-  let service: DateLoggerService;
+describe('NameService', () => {
+  let service: NameService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DateLoggerService);
+    service = TestBed.inject(NameService);
   });
 
   it('should be created', () => {

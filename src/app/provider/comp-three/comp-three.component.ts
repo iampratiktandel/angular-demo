@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DateLoggerService } from '../date-logger/date-logger.service';
-import { LoggerService } from '../logger-service/logger.service';
+import { AgeService } from '../provider-service/age.service';
+import { NameService } from '../provider-service/name.service';
 
 @Component({
   selector: 'app-comp-three',
@@ -10,10 +10,10 @@ import { LoggerService } from '../logger-service/logger.service';
 export class CompThreeComponent implements OnInit {
 
   message: string;
-  constructor(private loggerService: DateLoggerService) { }
+  constructor(private ageService: AgeService) { }
 
   ngOnInit(): void {
-    this.message = this.loggerService.printName('Comp-Three');
+    this.message = this.ageService.callService('Comp-Three')
   }
 
 }

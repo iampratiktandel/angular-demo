@@ -1,6 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { LoggerService } from '../logger-service/logger.service';
-import { NAME } from '../name';
+import { Component, OnInit } from '@angular/core';
+import { NameService } from '../provider-service/name.service';
 
 @Component({
   selector: 'app-comp-one',
@@ -10,12 +9,10 @@ import { NAME } from '../name';
 export class CompOneComponent implements OnInit {
 
   message: string;
-  name: string;
-  constructor(private loggerService: LoggerService, @Inject(NAME) name:string) {
-  }
+  constructor(private nameService: NameService) { }
 
   ngOnInit(): void {
-    this.message = this.loggerService.printName('Comp-One');
+    this.message = this.nameService.callService('Comp-One');
   }
-  
+
 }
