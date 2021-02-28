@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'overlay', component: ProfileOverlayComponent },
   // { path: 'di', component: ProviderComponent },
   { path: 'operators', loadChildren: () => import('./operators/operators.module').then(m => m.OperatorsModule) },
-  { path: 'provider', loadChildren: () => import('./provider/provider.module').then(m => m.ProviderModule) }
+  { path: 'provider', loadChildren: () => import('./provider/provider.module').then(m => m.ProviderModule) },
+  { path: 'render', loadChildren: () => import('./render/render.module').then(m => m.RenderModule) }
 ];
 
 @NgModule({

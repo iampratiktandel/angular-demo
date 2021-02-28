@@ -1,0 +1,18 @@
+<div class="container" #box>
+  <h2 class="text-center">Renderer</h2>
+
+  <div class="row">
+    <div class="col">
+      <button (click)="changeChildProperty()">Change Child Property</button> <br>  
+      <button (click)="callChildMethod()">Call Child Method</button>
+    </div>
+
+    <div class="col">
+      <app-comp-one></app-comp-one>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <app-comp-two></app-comp-two>
+</div>
