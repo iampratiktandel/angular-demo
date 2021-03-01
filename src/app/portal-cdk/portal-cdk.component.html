@@ -4,6 +4,7 @@
     <ng-template [cdkPortalOutlet]="selectedPortal"></ng-template>
   </div>
   <ng-template #templatePortalContent>Hello, this is a template portal</ng-template>
+  <!-- <div #templatePortalContent>Hello, this is a template portal</div> -->
 
   <button (click)="selectedPortal = componentPortal">Render component portal</button>
   <button (click)="selectedPortal = templatePortal">Render template portal</button>

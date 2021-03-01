@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row" appCustom>
+    <div class="col p-5 text-center">
+      <h1>Hello World</h1>
+
+      <button (click)="changeColor('red')">Red</button>
+      <button (click)="changeColor('green')">Green</button>
+      <button (click)="changeColor('blue')">Blue</button>
+    </div>
+  </div>
+</div>
+
+<div class="container p-5">
+  <button (click)="removeChild()">Remove Component Four</button>
+  <app-comp-four #compFour></app-comp-four>
+</div>
