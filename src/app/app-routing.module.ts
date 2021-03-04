@@ -13,11 +13,11 @@ const routes: Routes = [
   { path: 'rxjs', loadChildren: () => import('./rxj/rxj.module').then(m => m.RxjModule) },
   { path: 'portal', component: PortalCdkComponent },
   { path: 'overlay', component: ProfileOverlayComponent },
-  // { path: 'di', component: ProviderComponent },
   { path: 'operators', loadChildren: () => import('./operators/operators.module').then(m => m.OperatorsModule) },
   { path: 'provider', loadChildren: () => import('./provider/provider.module').then(m => m.ProviderModule) },
   { path: 'render', loadChildren: () => import('./render/render.module').then(m => m.RenderModule) },
   { path: 'ng-temp', loadChildren: () => import('./ng-temp/ng-temp.module').then(m => m.NgTempModule) },
+  { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
   { path: '**', component: PageNotFoundComponent }
 ];
 
