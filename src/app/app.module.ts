@@ -12,6 +12,8 @@ import { DynoComponent } from './dyno/dyno.component';
 import { DevComponent } from './dev/dev.component';
 import { PortalCdkComponent } from './portal-cdk/portal-cdk.component';
 import { ProfileOverlayComponent, RotiniPanel, UserProfileComponent } from './profile-overlay/profile-overlay.component';
+import { HeaderComponent } from './header/header.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,9 @@ import { ProfileOverlayComponent, RotiniPanel, UserProfileComponent } from './pr
     PortalCdkComponent,
     ProfileOverlayComponent,
     // UserProfileComponent
-    RotiniPanel
+    RotiniPanel,
+    HeaderComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

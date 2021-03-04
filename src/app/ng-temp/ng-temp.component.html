@@ -1,0 +1,19 @@
+<ng-template let-name="name" let-message="message" #template1>  
+  <p>Dear {{name}} , {{message}} </p>
+</ng-template>
+ 
+<ng-container *ngTemplateOutlet="template1; context: user">
+</ng-container> 
+
+
+
+<ng-template #template2>
+  <div *ngFor="let cust of customers">
+    <p>{{cust.name}} bought {{cust.product}}</p>
+  </div>
+</ng-template>
+ 
+ 
+<ng-container *ngTemplateOutlet="template2">
+</ng-container> 
+ 

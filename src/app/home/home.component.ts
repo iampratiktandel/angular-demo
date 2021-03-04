@@ -8,11 +8,15 @@ import { DynoComponent } from '../dyno/dyno.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  dynoRef: ComponentRef<any>;
-  @ViewChild('dynoContainer', { read: ViewContainerRef }) dynoContainer: ViewContainerRef;
+  // dynamicRef: ComponentRef<any>;
+  // @ViewChild('dynoContainer', { read: ViewContainerRef }) dynoContainer: ViewContainerRef;
 
-  devRef: ComponentRef<any>;
-  @ViewChild('devContainer', { read: ViewContainerRef }) devContainer: ViewContainerRef;
+  // devRef: ComponentRef<any>;
+  // @ViewChild('devContainer', { read: ViewContainerRef }) devContainer: ViewContainerRef;
+
+  dynamicRef: ComponentRef<any>;
+  @ViewChild('outputContainer', { read: ViewContainerRef }) dynoContainer: ViewContainerRef;
+
 
   constructor(private factoryResolver: ComponentFactoryResolver, public viewContainerRef: ViewContainerRef) { }
 
@@ -25,26 +29,26 @@ export class HomeComponent implements OnInit {
   }
 
   createComponentOne() {
-    if (this.dynoRef) {
-      this.dynoRef.destroy();
+    if (this.dynamicRef) {
+      this.dynamicRef.destroy();
     }
     const dynoComponent = this.factoryResolver.resolveComponentFactory<DynoComponent>(DynoComponent);
-    this.dynoRef = this.dynoContainer.createComponent<DynoComponent>(dynoComponent);
-    this.dynoRef.instance.data = 'This is Dyno Component';
+    this.dynamicRef = this.dynoContainer.createComponent<DynoComponent>(dynoComponent);
+    this.dynamicRef.instance.data = 'This is Dyno Component';
 
-    this.dynoRef.instance.destroy.subscribe(() => this.dynoRef.destroy());
+    this.dynamicRef.instance.destroy.subscribe(() => this.dynamicRef.destroy());
   }
 
   // Component Two
   loadComponentTwo() {
-    if (this.devRef) {
-      this.devRef.destroy();
+    if (this.dynamicRef) {
+      this.dynamicRef.destroy();
     }
 
     const devComponent = this.factoryResolver.resolveComponentFactory<DevComponent>(DevComponent);
-    this.devRef = this.devContainer.createComponent<DevComponent>(devComponent);
-    this.devRef.instance.data = 'This is Dev Component';
+    this.dynamicRef = this.dynoContainer.createComponent<DevComponent>(devComponent);
+    this.dynamicRef.instance.data = 'This is Dev Component';
 
-    this.devRef.instance.destroy.subscribe(() => this.devRef.destroy());
+    this.dynamicRef.instance.destroy.subscribe(() => this.dynamicRef.destroy());
   }
 }
