@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
     const dynoComponent = this.factoryResolver.resolveComponentFactory<DynoComponent>(DynoComponent);
     this.dynamicRef = this.dynoContainer.createComponent<DynoComponent>(dynoComponent);
     this.dynamicRef.instance.data = 'This is Dyno Component';
-    this.dynamicRef.instance.
+    // this.dynamicRef.instance.
 
     this.dynamicRef.instance.destroy.subscribe(() => this.dynamicRef.destroy());
   }
