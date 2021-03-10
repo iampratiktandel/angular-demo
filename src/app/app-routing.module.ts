@@ -8,7 +8,7 @@ import { ProfileOverlayComponent } from './profile-overlay/profile-overlay.compo
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'employees', loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule), pathMatch: 'full' },
+  { path: 'employees', loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule) },
   // { path: 'intern', loadChildren: () => import('./intern/intern.module').then(m => m.InternModule) },
   { path: 'rxjs', loadChildren: () => import('./rxj/rxj.module').then(m => m.RxjModule) },
   { path: 'portal', component: PortalCdkComponent },

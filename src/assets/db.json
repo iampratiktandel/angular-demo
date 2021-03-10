@@ -1,27 +1,62 @@
 {
   "employees": [
-    { "id": 1, "name": "Mitul Patel", "designation": "Angular Developer" },
-    { "id": 2, "name": "Hiren Tandel", "designation": "Angular Developer" },
-    { "id": 3, "name": "Gaurang Valia", "designation": "Angular Developer" },
-    { "id": 4, "name": "Anjali Tandel", "designation": "Angular Developer" },
-    { "id": 5, "name": "Sonal Patil", "designation": "Angular Developer" }
+    {
+      "empName": "Ali",
+      "empSalary": "10000",
+      "empAddress": {
+        "state": "Gujarat",
+        "city": "England",
+        "pincode": "396001"
+      },
+      "id": 3
+    },
+    {
+      "empName": "Umang",
+      "empSalary": "10000",
+      "empAddress": {
+        "state": "Gujarat",
+        "city": "Valsad",
+        "pincode": "396001"
+      },
+      "id": 4
+    },
+    {
+      "empName": "Pratik",
+      "empSalary": "10000",
+      "empAddress": {
+        "state": "Gujarat",
+        "city": "Valsad",
+        "pincode": "396001"
+      },
+      "id": 5
+    },
+    {
+      "empName": "Ali",
+      "empSalary": "10000",
+      "empAddress": {
+        "state": "Gujarat",
+        "city": "Surat",
+        "pincode": "396001"
+      },
+      "id": 6
+    }
   ],
   "interns": [
-    { 
+    {
       "id": 1,
       "name": "Pratik",
       "email": "pratiktandel@gmail.com",
       "projects": [
         {
-          "project1" : "website",
-          "project2" : "app"
+          "project1": "website",
+          "project2": "app"
         }
       ],
       "skills": [
         {
           "skillName": "HTML",
           "experience": "1 year"
-        } 
+        }
       ]
     }
   ]

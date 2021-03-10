@@ -6,17 +6,16 @@ import { EmployeesComponent } from './employees.component';
 
 const routes: Routes = [
   { 
-    path: '', component: EmployeesComponent,
-    //###### This route is not working ######
-    // children: [
-    //   { path: 'add', component: AddEmployeeComponent }
-    // ]
+    path: '', 
+    component: EmployeesComponent
   },
   {
-    path: 'employess', component: EmployeesComponent, 
-    children: [
-      { path: 'add', component: AddEmployeeComponent }
-    ]
+    path: 'add',
+    component: AddEmployeeComponent
+  },
+  {
+    path: 'edit/:id',
+    component: AddEmployeeComponent
   }
 ];
 

@@ -1,33 +1,36 @@
-<!-- <div class="container">
-  <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
-    <div class="form-group">
-      <label class="form-label">Id</label>
-      <input type="number" class="form-control" name="empId" [(ngModel)]="employeeModel.empId">
-    </div>
-    <div class="form-group">
+<div class="container">
+  <h3 class="text-center mt-3">Add Employee</h3>
+  <form class="row g-3" #employeeForm="ngForm" (ngSubmit)="onAddEmployee(employeeForm.value)">
+    <div class="col-md-6">
       <label class="form-label">Name</label>
-      <input type="text" class="form-control" name="empName" [(ngModel)]="employeeModel.empName">
+      <input type="text" class="form-control" name="empName" [(ngModel)]="employeeModel.empName" required>
     </div>
-    <div class="form-group">
+    <div class="col-md-6">
       <label class="form-label">Salary</label>
-      <input type="number" class="form-control" name="empSalary" [(ngModel)]="employeeModel.empSalary">
+      <input type="text" class="form-control" name="empSalary" [(ngModel)]="employeeModel.empSalary" required>
     </div>
-    <div ngModelGroup="empAddress">
-      <div class="form-group">
-        <label class="form-label">City</label>
-        <input type="text" class="form-control" name="city" [(ngModel)]="employeeModel.city">
+    <div class="row" ngModelGroup="empAddress">
+      <div class="col-md-4 mt-3">
+        <label for="inputState" class="form-label">State</label>
+        <select id="inputState" class="form-select" name="state" [(ngModel)]="employeeModel.empAddress.state" required>
+          <option value="Gujarat">Gujarat</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Punjab">Punjab</option>
+          <option value="Kerala">Kerala</option>
+        </select>
       </div>
-      <div class="form-group">
-        <label class="form-label">Pincode</label>
-        <input type="number" class="form-control" name="pincode" [(ngModel)]="employeeModel.pincode">
+      <div class="col-md-4 mt-3">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" name="city" [(ngModel)]="employeeModel.empAddress.city" required>
+      </div>
+      <div class="col-md-4 mt-3">
+        <label for="inputZip" class="form-label">Pincode</label>
+        <input type="text" class="form-control" name="pincode" [(ngModel)]="employeeModel.empAddress.pincode" required>
       </div>
     </div>
-    <div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary" [disabled]="!employeeForm.valid">{{canEdit ? 'Edit' : 'Add'}}</button>
     </div>
   </form>
 </div>
-
-<div class="container">
-  {{diagnostic}}
-</div> -->

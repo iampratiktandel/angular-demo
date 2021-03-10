@@ -54,6 +54,11 @@ export class EmployeesComponent implements OnInit {
     console.log('This data is fetched using Async Pipe');
   }
 
+  public deleteEmployee(id: number) {
+    confirm('Are you sure?');
+    this.employeeService.deleteEmployee(id);
+  }
+
   // ngOnDestroy(): void {
   //   this.subscription.unsubscribe();
   // }

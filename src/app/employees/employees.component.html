@@ -3,25 +3,25 @@
   <table class="table table-striped table-hover border border-secondary">
     <thead>
       <tr>
-        <th scope="col">Id</th>
         <th scope="col">Name</th>
-        <th scope="col">Designation</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Address</th>
         <th scope="col">Options</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor='let employee of employees$ | async'>
-        <th scope="row">{{employee.id}}</th>
-        <td>{{employee.name}}</td>
-        <td>{{employee.designation}}</td>
+        <td>{{employee.empName}}</td>
+        <td>{{employee.empSalary}}</td>
+        <td>{{employee.empAddress.city}}, {{employee.empAddress.state}}</td>
         <td>
-          <button>Edit</button>
-          <button>Delete</button>
+          <button class="btn btn-primary" [routerLink]="['edit', employee.id]" routerLinkActive="router-link-active" >Edit</button>
+          <button class="btn btn-danger" (click)="deleteEmployee(employee.id)">Delete</button>
         </td>
       </tr>
     </tbody>
   </table>
-  <a routerLink="add">Add Employee</a>
+  <button routerLink="add" class="btn btn-secondary">Add Employee</button>
 </div>
 
 <router-outlet></router-outlet>

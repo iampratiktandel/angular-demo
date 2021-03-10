@@ -5,13 +5,15 @@ import { EmployeesRoutingModule } from './employees-routing.module';
 import { EmployeesComponent } from './employees.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [EmployeesComponent, AddEmployeeComponent, EditEmployeeComponent],
   imports: [
     CommonModule,
-    EmployeesRoutingModule
+    EmployeesRoutingModule,
+    FormsModule
   ],
   // exports: [EmployeesComponent, AddEmployeeComponent, EditEmployeeComponent]
 })
